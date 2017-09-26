@@ -1,3 +1,8 @@
 #+TITLE: colormaps.el
 
-Colormaps for Emacs based on [[https://github.com/bpostlethwaite/colormap][colormap]].
+Colormaps for Emacs based on [[https://github.com/bpostlethwaite/colormap][colormap]]. Useful for plotting inside Emacs.
+
+The image below shows two color schemes (viridis and inferno) used to plot a
+heatmap in csv inside Emacs.
+
+[[file:./heatmap.png]]
