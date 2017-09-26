@@ -1,0 +1,3 @@
+#+TITLE: colormaps.el
+
+Colormaps for Emacs based on [[https://github.com/bpostlethwaite/colormap][colormap]].
