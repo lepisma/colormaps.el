@@ -2,6 +2,21 @@
 
 Colormaps for Emacs based on [[https://github.com/bpostlethwaite/colormap][colormap]]. Useful for plotting inside Emacs.
 
+#+BEGIN_SRC emacs-lisp
+;; To get color in hex for value in range [0.0, 1.0]
+(colormaps-get-color 0.4 'inferno)
+;; Last arg is colormap-id, defaults to 'viridis
+
+;; Available colormaps are
+(mapcar 'car colormaps-cmaps)
+
+;;(viridis inferno magma plasma jet hsv hot cool spring summer autumn winter
+;; bone copper greys yignbu greens yiorrd bluered rdbu picnic rainbow portland
+;; blackbody earth electric warm rainbow-soft bathymetry cdom chlorophyll density
+;; freesurface-blue freesurface-red oxygen par phase salinity temperature velocity-blue
+;; velocity-green cubehelix)
+#+END_SRC
+
 The image below shows two color schemes (viridis and inferno) used to plot a
 heatmap in csv inside Emacs.
 
