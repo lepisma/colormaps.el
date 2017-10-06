@@ -29,6 +29,7 @@
 
 ;;; Code:
 
+(require 'cl-lib)
 (require 'color)
 (require 'pcase)
 
@@ -346,20 +347,21 @@
                   (0.87 . (224 220 93 ))
                   (0.93 . (218 241 142))
                   (1.00 . (227 253 198)))))
-  "Color map definitions")
+  "Color map definitions.")
 
 (defun colormaps-interpolate (value cmap-lo cmap-hi)
-  "Interpolate the given value using given colormaps."
+  "Interpolate the given VALUE using given colormaps ranges CMAP-LO and CMAP-HI."
   (pcase (list cmap-lo cmap-hi)
     (`((,val-lo . ,color-lo) (,val-hi . ,color-hi))
      (let ((val-pos (/ (- value val-lo) (float (- val-hi val-lo)))))
-       (mapcar* (lambda (c1 c2) (round (+ c1 c2)))
-                (mapcar (lambda (x) (* x (- 1 val-pos))) color-lo)
-                (mapcar (lambda (x) (* x val-pos)) color-hi))))))
+       (cl-mapcar (lambda (c1 c2) (round (+ c1 c2)))
+                  (mapcar (lambda (x) (* x (- 1 val-pos))) color-lo)
+                  (mapcar (lambda (x) (* x val-pos)) color-hi))))))
 
 (defun colormaps-get-def-range (value cmap &optional defs prev)
-  "Get lower and upper color definition for given value."
-  (assert (and (>= value 0.0) (<= value 1.0)) nil "Value not in range [0.0, 1.0]")
+  "Get lower and upper color definition for VALUE using CMAP.
+Optional args DEFS and PREV are for recursion."
+  (cl-assert (and (>= value 0.0) (<= value 1.0)) nil "Value not in range [0.0, 1.0]")
   (if (null defs)
       (colormaps-get-def-range value cmap (cdr cmap) (car cmap))
     (let ((current (car defs)))
