@@ -91,7 +91,7 @@
         (colormaps-get-def-range value cmap (cdr defs) current)))))
 
 (defun colormaps-get-color (value &optional cmap-id)
-  "Get hex color for given value and color map"
+  "Get hex color for given VALUE and CMAP-ID (identifier symbol for colormap)."
   (pcase (colormaps-get-def-range value (alist-get (or cmap-id 'viridis) colormaps-cmaps))
     (`(,cmap-lo . ,cmap-hi)
      (apply #'color-rgb-to-hex (mapcar (lambda (x) (/ x 255.0)) (colormaps-interpolate value cmap-lo cmap-hi))))))
