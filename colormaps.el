@@ -1,10 +1,11 @@
-;;; colormaps.el --- Colormaps for Emacs
+;;; colormaps.el --- Hex colormaps
 
 ;; Copyright (c) 2017 Abhinav Tushar
 
 ;; Author: Abhinav Tushar <lepisma@fastmail.com>
-;; Version: 0.1.0
-;; Keywords: colors, colormaps
+;; Version: 0.1.1
+;; Package-Requires: ((emacs "25"))
+;; Keywords: tools
 ;; URL: https://github.com/lepisma/colormaps.el
 
 ;;; Commentary:
