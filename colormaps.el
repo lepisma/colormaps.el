@@ -3,7 +3,7 @@
 ;; Copyright (c) 2017 Abhinav Tushar
 
 ;; Author: Abhinav Tushar <lepisma@fastmail.com>
-;; Version: 0.1.1
+;; Version: 0.1.2
 ;; Package-Requires: ((emacs "25"))
 ;; Keywords: tools
 ;; URL: https://github.com/lepisma/colormaps.el
@@ -370,6 +370,7 @@ Optional args DEFS and PREV are for recursion."
           (cons prev current)
         (colormaps-get-def-range value cmap (cdr defs) current)))))
 
+;;;###autoload
 (defun colormaps-get-color (value &optional cmap-id)
   "Get hex color for given VALUE and CMAP-ID (identifier symbol for colormap)."
   (pcase (colormaps-get-def-range value (alist-get (or cmap-id 'viridis) colormaps-cmaps))
