@@ -1,5 +1,7 @@
 #+TITLE: colormaps.el
 
+[[https://melpa.org/#/colormaps][file:https://melpa.org/packages/colormaps-badge.svg]] [[https://stable.melpa.org/#/colormaps][file:https://stable.melpa.org/packages/colormaps-badge.svg]]
+
 Colormaps for Emacs based on [[https://github.com/bpostlethwaite/colormap][colormap]]. Useful for plotting inside Emacs.
 
 #+BEGIN_SRC emacs-lisp
